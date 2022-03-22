@@ -11,10 +11,10 @@ public class Home extends BrowserUtils {
     @FindBy(xpath = "//input[@type='submit']")
     private WebElement buyNow;
 
-
     public void setBuyNow(){
         staticWait(2);
         buyNow.click();
     }
 
 }
+

@@ -5,12 +5,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import renastech.utils.BrowserUtils;
 import renastech.utils.ConfigurationsReader;
-import sun.jvm.hotspot.debugger.Page;
 
-public class OrangeHRMHome extends BrowserUtils {
-    public OrangeHRMHome(){
-        PageFactory.initElements(driver, this);
-    }
+
+public class OrangeHRMLogin extends BrowserUtils {
+    public OrangeHRMLogin(){ PageFactory.initElements(driver,this); }
+
     @FindBy(id = "txtUsername")
     private WebElement username;
     @FindBy(id = "txtPassword")
@@ -20,7 +19,6 @@ public class OrangeHRMHome extends BrowserUtils {
 
     public void setUsername(){
         username.sendKeys(ConfigurationsReader.getProperties("username"));
-
     }
     public void setPassword(){
         password.sendKeys(ConfigurationsReader.getProperties("password"));

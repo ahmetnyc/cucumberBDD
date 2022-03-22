@@ -28,10 +28,6 @@ Feature: We are using this feature to demo class
 
 
 
-
-
-
-
   #gherking language
     #Gherking has a keywords
       # Given
