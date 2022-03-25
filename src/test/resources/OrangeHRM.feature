@@ -1,6 +1,6 @@
 Feature: Orange HRM functionality scenarios
 
-  @Smoke @LoginWithoutParams @regression
+  @smoke @LoginWithoutParams @regression
   Scenario: Login to Orange HRM
     Given The user wants to go to orangeHRM application
     When The user wants to enter username and password
@@ -8,7 +8,7 @@ Feature: Orange HRM functionality scenarios
     And The user should be able to navigate dashboard
 
 
-  @Smoke @TC100
+  @smoke @TC100
   Scenario: Add new personal
     Given The user wants to go to orangeHRM application
     When The user wants to enter username and password
@@ -16,13 +16,14 @@ Feature: Orange HRM functionality scenarios
     And The user should be able to navigate dashboard
     Then The user wants to go to PIM page
     Then The user wants to see add employee page
-    Then The user wants to add user name as "Araz"
+    Then The user wants to add user name as "Hasan"
     Then The user wants to add last name as "atug"
     Then The user wants to save the information
     Then The user should be able to see "Personal Details"
 
 
- @Smoke @TC200  @regression
+
+  @smoke  @TC200 @regression
   Scenario: Add new personal
     Given The user wants to go to orangeHRM application
     When The user wants to enter username and password
@@ -30,16 +31,14 @@ Feature: Orange HRM functionality scenarios
     And The user should be able to navigate dashboard
     Then The user wants to go to PIM page
     Then The User wants to see add employee page
-      |FirstName|Serdilan12312213  |
-      |LastName |Jerry1231231223|
+      |FirstName|Serdilann124545312233  |
+      |LastName |Jerryy123123145423     |
     Then The user wants to add login details
-      |User Name   |jacyyy  |
-      |Password    |Erkan!123  |
-      |Status      |Disabled   |
+      |User Name   |jacyyy       |
+      |Password    |Erkan!125555 |
+      |Status      |Disabled     |
     Then The user wants to save the information
     Then The user should be able to see "Personal Details"
-
-
 
 
   @smoke @TC300
@@ -51,15 +50,36 @@ Feature: Orange HRM functionality scenarios
     Then The user wants to go to PIM page
     Then The user wants to see add employee page
     Then The user wants to add an employee in a list way
-      |Tommm1234   | Jerryyyyyy |
-      |Hasan7777   | Raman8888  |
+      |Tommm1234| Jerryyyyyy|
     Then The user wants to add login details in a list way
-      | renastech123  | RenasTech2021 |Disabled |
-      | hasan         | hasan727272   |Disabled |
-      | Ruken Ruzgar  | rukenR222$    |Disabled |
-      | Mehmet        | secretpas     |Disabled |
+      |renastech123 | RenasTech2021 |Disabled |
+      |hasan        | hasan727272   |Disabled |
+      |Ruken Ruzgar | rukenR222$    |Disabled |
+      |Mehmet       | secretpas     |Disabled |
     Then The user wants to save the information
     Then The user should be able to see "Personal Details"
+
+
+@Scenario_Outline  @Parallel
+    Scenario Outline: Add new nationality to nationality page in Orange HRM Project
+      Given The user wants to go to orangeHRM application
+      When The user wants to enter username and password
+      Then The user wants to click login
+      And The user should be able to navigate dashboard
+      Then The user wants to go yo Admin page
+      And The user wants to go Nationalities section
+      Then The user wants to add new nationalities
+      Then The user wants to add nationalities as "<Nationalities>"
+
+      Examples:
+        |Nationalities   |
+        | Aramaicd       |
+        | Spartans       |
+        | Romanish       |
+
+
+
+
 
 
 

@@ -20,10 +20,10 @@ public class Hooks extends BrowserUtils {
     }
 
     @After
-    public void  tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario){
         if(scenario.isFailed()){
-            byte[] data=((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.attach(data,"image/png", scenario.getName());
+            byte[] data=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(data, "image/png", scenario.getName());
         }
     }
 }

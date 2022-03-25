@@ -11,3 +11,7 @@ Feature: Payment Gateway functional test
       |CVV    |777             |
     Then The user wants to pay now
     And The user wants to verify message as "Payment successfull!"
+
+
+
+

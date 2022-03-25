@@ -10,7 +10,9 @@ import renastech.utils.BrowserUtils;
 
 public class OrangeHRMHome extends BrowserUtils {
     public OrangeHRMHome(){ PageFactory.initElements(driver,this); }
-    private static final Logger logger = Logger.getLogger(OrangeHRMHome.class);
+
+
+    private static final Logger logger= Logger.getLogger(OrangeHRMHome.class);
 
     @FindBy(xpath = "//h1[contains(text(),'Dashboard')]")
     private WebElement dashboardMessage;
@@ -27,7 +29,7 @@ public class OrangeHRMHome extends BrowserUtils {
     @FindBy(xpath = "//h1[.='Personal Details']")
     private WebElement ProfileHeader;
     @FindBy(id = "chkLogin")
-    private WebElement datailsBox;
+    private WebElement detailsBox;
     @FindBy(id = "user_name")
     private WebElement name2;
     @FindBy(id = "user_password")
@@ -46,20 +48,16 @@ public class OrangeHRMHome extends BrowserUtils {
     public void setName(String name){ Name.sendKeys(name); }
     public void setLastName(String lastname){ LastName.sendKeys(lastname); }
     public void setSaveButton(){ clickWithWait(saveButton); }
-    public void setProfileHeader(String expectedHeader){Assert.assertEquals(expectedHeader,ProfileHeader.getText());}
-    public void setDatailsBox(){clickWithWait(datailsBox);}
-    public void setName2(String Name2){name2.sendKeys(Name2); }
-    public void setPassword(String Password){password.sendKeys(Password); }
-    public void setRepassword(String Repassword){repassword.sendKeys(Repassword); }
-    public void setStatus(String Status){BrowserUtils.selectFromDropDown(status,Status);
-    logger.info("Status is passed");
-
-
+    public void setProfileHeader(String expectedHeader){
+        Assert.assertEquals(expectedHeader,ProfileHeader.getText());
     }
+    public void setDetailsBox(){ clickWithWait(detailsBox); }
+    public void setName2(String Name2){ name2.sendKeys(Name2); }
+    public void setPassword(String Password){password.sendKeys(Password);}
+    public void setRepassword(String Repassword){repassword.sendKeys(Repassword);}
+    public void setStatus(String Status){BrowserUtils.selectFromDropDown(status,Status);logger.info("Status is passed");}
 
 }
-
-
 
 
 
